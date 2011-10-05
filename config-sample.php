@@ -29,6 +29,6 @@ $res_mgr = 'admin@example.com';
 // a user from an external domain
 $ext_user = 'user@example.org';
 
-$gession_id = '';
+$gsession_id = '';
 
 ?>
