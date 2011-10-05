@@ -1,12 +1,13 @@
 <?php
 require_once('OAuth.php');
-
 require_once('config.php');
 
 $consumer = new OAuthConsumer($CONSUMER_KEY, $CONSUMER_SECRET, NULL);
 
-// Setup actors in our scenario
+// Simple scenario - add an event to $user1's calendar
+// making them the organizer
 
+$invitee = $user1;
 $requestor_id = $invitee;
 $organizer = $invitee;
 $calendar = $invitee;

@@ -13,7 +13,21 @@
 $CONSUMER_KEY = 'KEY'; 
 $CONSUMER_SECRET = 'SECRET';
 
-$invitee = 'someone@example.com';
+// the user whose calendar is being updated
+$user1 = 'user1@example.com';
+
+// another user account within the same domain
+$user2 = 'user2@example.com';
+
+// a google resource calendar within the same domain
+$res_cal = 'example.com_XXXXXXXXX@resource.calendar.google.com';
+
+// another account within the domain that can add events to the 
+// resource calendar
+$res_mgr = 'admin@example.com';
+
+// a user from an external domain
+$ext_user = 'user@example.org';
 
 $gession_id = '';
 
