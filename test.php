@@ -13,7 +13,7 @@ $requestor_id = $res_mgr;
 $calendar = $res_cal;
 
 $base_feed = 'https://www.google.com/calendar/feeds/' . $calendar . '/private/full/';
-$params = array('max-results' => 10, 'xoauth_requestor_id' => $requestor_id, 'gsessionid' => $gsession_id);
+$params = array('max-results' => 10, 'xoauth_requestor_id' => $requestor_id, 'gsessionid' => 'WDXENS9Ehs8PbcjeXOQOHA');
 $request = OAuthRequest::from_consumer_and_token($consumer, NULL, 'POST', $base_feed, $params);
 
 // Sign the constructed OAuth request using HMAC-SHA1
@@ -37,7 +37,10 @@ echo send_request($request->get_normalized_http_method(), $url, $request->to_hea
   <title type='text'>Test Event</title>
   <content type='text'>&lt;h1&gt;Test Event&lt;/h1&gt;&lt;p&gt;Test event &lt;em&gt;via&lt;/em&gt; &lt;a href='http://oauth.net/'&gt;OAuth&lt;/a&gt;.&lt;/p&gt;</content>
   <gd:who email='" . $invitee . "' rel='http://schemas.google.com/g/2005#event.attendee' valueString='" . $invitee . "'>
-      <gd:attendeeStatus value='http://schemas.google.com/g/2005#event.invited'/>
+      <gd:attendeeStatus value='http://schemas.google.com/g/2005#event.accepted'/>
+  </gd:who>
+  <gd:who email='" . $user2 . "' rel='http://schemas.google.com/g/2005#event.attendee' valueString='" . $user2 . "'>
+      <gd:attendeeStatus value='http://schemas.google.com/g/2005#event.accepted'/>
   </gd:who>
   <gd:who email='" . $organizer . "' rel='http://schemas.google.com/g/2005#event.organizer' valueString='" . $organizer . "'/>
   <gd:transparency value='http://schemas.google.com/g/2005#event.opaque'/>
@@ -48,7 +51,7 @@ echo send_request($request->get_normalized_http_method(), $url, $request->to_hea
   <gCal:anyoneCanAddSelf value='false'/>
   <gCal:guestsCanInviteOthers value='false'/>
   <gCal:guestsCanModify value='false'/>
-  <gCal:guestsCanSeeGuests value='true'/>
+  <gCal:guestsCanSeeGuests value='false'/>
 </entry>");
  
 /**
