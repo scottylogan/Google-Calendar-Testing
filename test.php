@@ -35,7 +35,7 @@ echo send_request($request->get_normalized_http_method(), $url, $request->to_hea
   <category scheme='http://schemas.google.com/g/2005#kind'
     term='http://schemas.google.com/g/2005#event'></category>
   <title type='text'>Test Event</title>
-  <content type='text'>Test event via OAuth.</content>
+  <content type='text'>&lt;h1&gt;Test Event&lt;/h1&gt;&lt;p&gt;Test event &lt;em&gt;via&lt;/em&gt; &lt;a href='http://oauth.net/'&gt;OAuth&lt;/a&gt;.&lt;/p&gt;</content>
   <gd:who email='" . $invitee . "' rel='http://schemas.google.com/g/2005#event.attendee' valueString='" . $invitee . "'>
       <gd:attendeeStatus value='http://schemas.google.com/g/2005#event.invited'/>
   </gd:who>
