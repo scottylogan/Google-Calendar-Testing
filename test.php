@@ -8,9 +8,9 @@ $consumer = new OAuthConsumer($CONSUMER_KEY, $CONSUMER_SECRET, NULL);
 // making them the organizer
 
 $invitee = $user1;
-$organizer = $user2;
-$requestor_id = $user2;
-$calendar = $invitee;
+$organizer = $user1;
+$requestor_id = $user1;
+$calendar = $res_cal;
 
 $base_feed = 'https://www.google.com/calendar/feeds/' . $calendar . '/private/full/';
 $params = array('max-results' => 10, 'xoauth_requestor_id' => $requestor_id, 'gsessionid' => $gsession_id);
