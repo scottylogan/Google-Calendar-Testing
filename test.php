@@ -7,9 +7,9 @@ $consumer = new OAuthConsumer($CONSUMER_KEY, $CONSUMER_SECRET, NULL);
 // Simple scenario - add an event to $user1's calendar
 // making them the organizer
 
-$invitee = $user1;
-$organizer = $user1;
-$requestor_id = $user1;
+$invitee = $ext_user;
+$organizer = $res_mgr;
+$requestor_id = $res_mgr;
 $calendar = $res_cal;
 
 $base_feed = 'https://www.google.com/calendar/feeds/' . $calendar . '/private/full/';
@@ -36,7 +36,7 @@ echo send_request($request->get_normalized_http_method(), $url, $request->to_hea
     term='http://schemas.google.com/g/2005#event'></category>
   <title type='text'>Test Event</title>
   <content type='text'>Test event via OAuth.</content>
-  <gd:who email='" . $invitee . "' rel='http://schemas.google.com/g/2005#event.attendee' valueString='Scotty Logan'>
+  <gd:who email='" . $invitee . "' rel='http://schemas.google.com/g/2005#event.attendee' valueString='" . $invitee . "'>
       <gd:attendeeStatus value='http://schemas.google.com/g/2005#event.invited'/>
   </gd:who>
   <gd:who email='" . $organizer . "' rel='http://schemas.google.com/g/2005#event.organizer' valueString='" . $organizer . "'/>
