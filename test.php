@@ -22,6 +22,13 @@ $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, NULL);
 // Make signed OAuth request to the Contacts API server
 $url = $base_feed . '?' . implode_assoc('=', '&', $params);
 
+$start_time = intval(time()/3600) * 3600 + 3600;
+$end_time   = $start_time + 3600;
+
+$fmt = 'Y-m-d\TH:i:sP';
+$start = date($fmt, $start_time);
+$end   = date($fmt, $end_time);
+
 echo send_request($request->get_normalized_http_method(), $url, $request->to_header(), "<entry xmlns='http://www.w3.org/2005/Atom'
     xmlns:gd='http://schemas.google.com/g/2005'
     xmlns:gCal='http://schemas.google.com/gCal/2005'>
@@ -36,7 +43,7 @@ echo send_request($request->get_normalized_http_method(), $url, $request->to_hea
   <gd:transparency value='http://schemas.google.com/g/2005#event.opaque'/>
   <gd:eventStatus value='http://schemas.google.com/g/2005#event.confirmed'/>
   <gd:where valueString='Redwood G17'/>
-  <gd:when startTime='2011-10-05T22:00:00.000Z' endTime='2011-10-05T23:00:00.000Z'/>
+  <gd:when startTime='" . $start . "' endTime='" . $end . "'/>
   <gd:visibility value='http://schemas.google.com/g/2005#event.default'/>
   <gCal:anyoneCanAddSelf value='false'/>
   <gCal:guestsCanInviteOthers value='false'/>
