@@ -9,7 +9,7 @@ $consumer = new OAuthConsumer($CONSUMER_KEY, $CONSUMER_SECRET, NULL);
 
 $invitee = $user1;
 $requestor_id = $invitee;
-$organizer = $invitee;
+$organizer = $user2;
 $calendar = $invitee;
 
 $base_feed = 'https://www.google.com/calendar/feeds/' . $calendar . '/private/full/';
