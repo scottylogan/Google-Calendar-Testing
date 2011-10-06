@@ -8,8 +8,8 @@ $consumer = new OAuthConsumer($CONSUMER_KEY, $CONSUMER_SECRET, NULL);
 // making them the organizer
 
 $invitee = $user1;
-$requestor_id = $invitee;
 $organizer = $user2;
+$requestor_id = $user2;
 $calendar = $invitee;
 
 $base_feed = 'https://www.google.com/calendar/feeds/' . $calendar . '/private/full/';
